@@ -1,15 +1,9 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
-
-function Header() {
-  return (
-    <Link to="/">
-      <h1>Movie App</h1>
-    </Link>
-  );
-}
+import Loading from "./pages/Loading";
+import Header from "./components/Header";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,15 +24,18 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <Header />
         <Routes>
           <Route
             path="/"
-            element={loading ? "Loading" : <Home movies={movies} />}
+            element={loading ? <Loading /> : <Home movies={movies} />}
           ></Route>
-          <Route path="/movie/:id" element={<Detail />}></Route>
+          <Route
+            path="/movie/:id"
+            element={loading ? <Loading /> : <Detail movies={movies} />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>

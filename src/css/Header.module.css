@@ -1,0 +1,35 @@
+Link {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+}
+
+.navigator {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  margin-left: 50px;
+}
+
+.navigatorLink {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  opacity: 0.5;
+}
+
+.navigatorLink:hover {
+  opacity: 1;
+  transition: 0.1s;
+}
+
+.title {
+  text-decoration-line: none;
+}
+
+.title h1 {
+  margin-left: 100px;
+  color: white;
+}

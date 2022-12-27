@@ -1,12 +1,14 @@
-import styles from "./Home.module.css";
-import Movie from "./Movie";
+import styles from "../css/Home.module.css";
+import Movie from "../components/Movie";
 
 function Home({ movies }) {
   return (
-    <div>
-      <div className={styles.movieContainer}>
-        {movies.map((movie) => (
+    <div className={styles.home}>
+      <h2> 오늘의 영화!</h2>
+      <section className={styles.movieContainer}>
+        {movies.map((movie, idx) => (
           <Movie
+            key={idx}
             id={movie.id}
             title={movie.title}
             image={movie.medium_cover_image}
@@ -15,7 +17,7 @@ function Home({ movies }) {
             rating={movie.rating}
           />
         ))}
-      </div>
+      </section>
     </div>
   );
 }

@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import styles from "./Movie.module.css";
+import styles from "../css/Movie.module.css";
 
 function Movie({ id, title, image }) {
   return (
-    <div>
+    <div className={styles.movieBlock}>
       <Link to={`/movie/${id}`} className={styles.movieLink}>
         <div className={styles.movie}>
-          <img alt="x" src={image} width="200" height="250" />
+          <img alt="x" src={image} />
           <p>{title}</p>
         </div>
       </Link>
@@ -17,11 +17,8 @@ function Movie({ id, title, image }) {
 
 Movie.propTypes = {
   id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   image: PropTypes.string.isRequired,
-  summary: PropTypes.string,
-  genre: PropTypes.array,
-  rating: PropTypes.number,
 };
 
 export default Movie;
