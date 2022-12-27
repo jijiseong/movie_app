@@ -1,44 +1,46 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Home from "./pages/Home";
+import Detail from "./pages/Detail";
 
-function ToDo() {
-  const [value, setValue] = useState("");
-  const [toDoList, setToDoList] = useState([]);
-
-  const onChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  const onClick = () => {
-    setToDoList((curList) => [value, ...curList]);
-    setValue("");
-  };
-
+function Header() {
   return (
-    <div>
-      <label htmlFor="todo">Todo</label>
-      <input
-        placeholder="ToDo"
-        onChange={onChange}
-        value={value}
-        name="todo"
-        type="text"
-      />
-      <button onClick={onClick}>OK</button>
-      <hr />
-
-      <ul>
-        {toDoList.map((val, index) => (
-          <li key={index}>{val}</li>
-        ))}
-      </ul>
-    </div>
+    <Link to="/">
+      <h1>Movie App</h1>
+    </Link>
   );
 }
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
+
+  const loadMovies = async () => {
+    const jsonData = await (
+      await fetch(
+        "https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year"
+      )
+    ).json();
+    setMovies(jsonData.data.movies);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    loadMovies();
+  }, []);
+
   return (
     <div>
-      <ToDo />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={loading ? "Loading" : <Home movies={movies} />}
+          ></Route>
+          <Route path="/movie/:id" element={<Detail />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
