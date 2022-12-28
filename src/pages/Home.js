@@ -1,11 +1,12 @@
 import styles from "../css/Home.module.css";
 import Movie from "../components/Movie";
+import PropTypes from "prop-types";
 
-function Home({ movies }) {
+function MovieSection({ title, movies }) {
   return (
-    <div className={styles.home}>
-      <h2> 오늘의 영화!</h2>
-      <section className={styles.movieContainer}>
+    <section className={styles.todayContainer}>
+      <h2 className={styles.todayTitle}> {title}</h2>
+      <div className={styles.movies}>
         {movies.map((movie, idx) => (
           <Movie
             key={idx}
@@ -17,9 +18,33 @@ function Home({ movies }) {
             rating={movie.rating}
           />
         ))}
-      </section>
+      </div>
+    </section>
+  );
+}
+
+function Home({ moviesList }) {
+  return (
+    <div className={styles.home}>
+      <img
+        className={styles.mainImage}
+        alt="mainImage"
+        src={moviesList[0][0].background_image}
+      />
+      <div className={styles.body}>
+        <div className={styles.gradation} />
+        <div className={styles.movieContainer}>
+          <MovieSection title="오늘의 영화!" movies={moviesList[0]} />
+          <MovieSection title="내일의 영화!" movies={moviesList[1]} />
+        </div>
+      </div>
     </div>
   );
 }
+
+MovieSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  movies: PropTypes.array.isRequired,
+};
 
 export default Home;

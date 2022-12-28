@@ -1,9 +1,9 @@
-Link {
-  text-decoration: none;
-}
-
 .header {
+  font-size: 1vw;
   display: flex;
+  position: relative;
+  z-index: 100;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
 
 .navigator {
@@ -26,10 +26,12 @@ Link {
 }
 
 .title {
+  background-color: transparent;
   text-decoration-line: none;
 }
 
 .title h1 {
+  background-color: transparent;
   margin-left: 100px;
   color: white;
 }

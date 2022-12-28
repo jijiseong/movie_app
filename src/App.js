@@ -7,15 +7,20 @@ import Header from "./components/Header";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
+  const [moviesList, setMoviesList] = useState([]);
 
   const loadMovies = async () => {
-    const jsonData = await (
+    const jsonData1 = await (
       await fetch(
         "https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year"
       )
     ).json();
-    setMovies(jsonData.data.movies);
+    const jsonData2 = await (
+      await fetch(
+        "https://yts.mx/api/v2/list_movies.json?minimum_rating=5&maximum_rating=8.7&sort_by=year"
+      )
+    ).json();
+    setMoviesList([jsonData1.data.movies, jsonData2.data.movies]);
     setLoading(false);
   };
 
@@ -30,11 +35,11 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={loading ? <Loading /> : <Home movies={movies} />}
+            element={loading ? <Loading /> : <Home moviesList={moviesList} />}
           ></Route>
           <Route
             path="/movie/:id"
-            element={loading ? <Loading /> : <Detail movies={movies} />}
+            element={loading ? <Loading /> : <Detail moviesList={moviesList} />}
           ></Route>
         </Routes>
       </BrowserRouter>

@@ -3,7 +3,7 @@ import styles from "../css/Header.module.css";
 
 function Header() {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <Link to="/" className={styles.title}>
         <h1>TVING</h1>
       </Link>
@@ -19,7 +19,7 @@ function Header() {
         </Link>
       </nav>
       <div></div>
-    </div>
+    </header>
   );
 }
 

@@ -1,8 +1,22 @@
+.detail {
+  position: absolute;
+  top: 0px;
+  z-index: 0;
+}
+
+.mainImage {
+  width: 100vw;
+
+  filter: brightness(20%);
+}
+
 .infoContainer {
   display: flex;
   justify-content: space-between;
   margin: 0 50px 50px 50px;
   height: 60vh;
+  position: relative;
+  top: -75vh;
 }
 
 .info {

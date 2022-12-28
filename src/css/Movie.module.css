@@ -1,9 +1,10 @@
 .movie {
-  margin: 5px;
+  margin: 0.3vw;
 }
 
 .movie img {
   border-radius: 5px;
+  width: 10vw;
 }
 
 .movieLink {
@@ -13,5 +14,10 @@
 
 .movieBlock:hover {
   transform: translateY(-10px);
+  transition: 0.2s;
+}
+
+.movieBlock:not(:hover) {
+  transform: translateY(10px);
   transition: 0.2s;
 }

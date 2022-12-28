@@ -2,13 +2,23 @@ import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "../css/Detail.module.css";
 
-function Detail({ movies }) {
+function Detail({ moviesList }) {
   const { id } = useParams();
-  const movie = movies.find((element) => element.id === Number(id));
+  let movie = [];
+  for (let i = 0; i < moviesList.length; i++) {
+    movie = moviesList[i].find((m) => m.id === Number(id));
+    if (movie) {
+      break;
+    }
+  }
 
-  console.log(movie);
   return (
-    <div>
+    <div className={styles.detail}>
+      <img
+        className={styles.mainImage}
+        alt="mainImage"
+        src={movie.background_image}
+      />
       <div className={styles.infoContainer}>
         <div className={styles.info}>
           <h1 className={`${styles.movieTitle} ${styles.item}`}>
