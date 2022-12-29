@@ -1,4 +1,4 @@
-import { useNavigate, BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Detail from "./pages/Detail";
 import Loading from "./pages/Loading";
@@ -11,7 +11,7 @@ import Login from "./pages/Login";
 function App() {
   const [loading, setLoading] = useState(true);
   const [moviesList, setMoviesList] = useState([]);
-
+  localStorage.setItem("name", "jiseong");
   const loadMovies = async () => {
     const jsonData1 = await (
       await fetch(

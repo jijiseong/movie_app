@@ -10,7 +10,7 @@ React
 - [x] Detail Page
 - [ ] Live Page
 - [ ] Tv Program Page
-- [ ] Login
+- [x] Login
 - [ ] Search
 
 ### Back-end

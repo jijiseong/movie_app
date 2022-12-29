@@ -1,5 +1,4 @@
 export const localsMiddleware = (req, res, next) => {
-  console.log(req.session);
-  console.log("test");
+  console.log("req.session: ", req.session);
   next();
 };
