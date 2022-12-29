@@ -1,5 +1,5 @@
 import styles from "../css/Home.module.css";
-import Movie from "../components/Movie";
+import Movie from "./components/Movie";
 import PropTypes from "prop-types";
 
 function MovieSection({ title, movies }) {
@@ -29,7 +29,7 @@ function Home({ moviesList }) {
       <img
         className={styles.mainImage}
         alt="mainImage"
-        src={moviesList[0][0].background_image}
+        src={moviesList[0][0].background_image_original}
       />
       <div className={styles.body}>
         <div className={styles.gradation} />

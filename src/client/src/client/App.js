@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import Loading from "./pages/Loading";
-import Header from "./components/Header";
+import Header from "./pages/components/Header";
+import Live from "./pages/Live";
+import Home from "./pages/Home";
+import Tv from "./pages/Tv";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,8 +40,17 @@ function App() {
             element={loading ? <Loading /> : <Home moviesList={moviesList} />}
           ></Route>
           <Route
-            path="/movie/:id"
+            path="/contents/:id"
             element={loading ? <Loading /> : <Detail moviesList={moviesList} />}
+          ></Route>
+          <Route
+            path="/live"
+            element={loading ? <Loading /> : <Live />}
+          ></Route>
+          <Route path="/tv" element={loading ? <Loading /> : <Tv />}></Route>
+          <Route
+            path="/movie"
+            element={loading ? <Loading /> : <Live moviesList={moviesList} />}
           ></Route>
         </Routes>
       </BrowserRouter>

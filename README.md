@@ -4,6 +4,8 @@
 
 ### Front-end
 
+React
+
 - [x] Home Page
 - [x] Detail Page
 - [ ] Live Page
@@ -12,6 +14,8 @@
 - [ ] Search
 
 ### Back-end
+
+Express
 
 - [ ] Home Page
 - [ ] Detail Page
