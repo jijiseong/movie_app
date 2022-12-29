@@ -35,7 +35,7 @@ function Detail({ moviesList }) {
             <button className={`${styles.playBtn} ${styles.btn}`}>
               ▶ 1화 이어보기
             </button>
-            <button className={`${styles.btn}`}>
+            <button className={`${styles.btn} ${styles.likeBtn}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -53,7 +53,7 @@ function Detail({ moviesList }) {
               </svg>
               <div>찜</div>
             </button>
-            <button className={`${styles.btn}`}>
+            <button className={`${styles.btn} ${styles.shareBtn}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -67,15 +67,15 @@ function Detail({ moviesList }) {
                   opacity="0.995"
                 ></path>
               </svg>
-              <div>공유하기</div>
+              <div>공유</div>
             </button>
           </div>
           <p className={styles.item}>{movie.summary}</p>
         </div>
         <img
-          className={styles.image}
-          alt="x"
-          src={movie.medium_cover_image}
+          className={styles.coverImage}
+          alt="coverImage"
+          src={movie.large_cover_image}
         ></img>
       </div>
       <hr />

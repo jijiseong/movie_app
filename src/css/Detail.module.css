@@ -6,50 +6,49 @@
 
 .mainImage {
   width: 100vw;
-
   filter: brightness(20%);
 }
 
 .infoContainer {
   display: flex;
+
   justify-content: space-between;
-  margin: 0 50px 50px 50px;
-  height: 60vh;
-  position: relative;
-  top: -75vh;
+  height: 30vw;
+  width: 100vw;
+  position: absolute;
+  top: 10vw;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 40vw;
-  min-width: 500px;
+  margin-left: 7vw;
   margin-right: 100px;
 }
 
 .item:nth-child(1) {
-  flex-grow: 1;
   width: 40vw;
+  height: 5vw;
+  white-space: nowrap;
 }
 .item:nth-child(2) {
-  flex-grow: 1;
-  margin-top: 10px;
   width: 40vw;
+  height: 2vw;
 }
 .item:nth-child(3) {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 10px;
-  flex-grow: 1;
   width: 40vw;
+  height: 5vw;
+  margin-top: 1vw;
 }
 .item:nth-child(4) {
-  flex-grow: 4;
+  margin-top: 1vw;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 5px;
   font-size: 1vw;
   width: 40vw;
 }
@@ -63,7 +62,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .tags span {
@@ -72,14 +71,10 @@
   padding-right: 0.5vw;
   border: 1px solid white;
   border-radius: 3px;
-  height: 4vh;
-  line-height: 4vh;
-
-  width: auto;
+  height: 2vw;
+  line-height: 2vw;
   text-align: center;
   font-size: 1vw;
-}
-.rating {
 }
 
 .btn {
@@ -98,18 +93,38 @@
 
 .btn div {
   color: white;
+  font-size: 1vw;
 }
 
 .playBtn {
   background-color: white;
   width: 30vw;
-  height: 10vh;
+  height: 5vw;
   border-radius: 5px;
   font-size: 1.3vw;
   margin-right: 2vw;
 }
 
-.image {
+.shareBtn {
+  margin: 0.5vw;
+}
+
+.likeBtn {
+  margin: 0.5vw;
+}
+
+.likeBtn svg {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+.shareBtn svg {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+.coverImage {
   border-radius: 4px;
-  box-shadow: 2px 2px 3px gray;
+  box-shadow: 2px 2px 5px gray;
+  margin-right: 7vw;
 }
