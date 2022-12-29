@@ -4,6 +4,10 @@ import styles from "../../css/Header.module.css";
 function Header() {
   return (
     <header className={styles.header}>
+      <script
+        src="https://kit.fontawesome.com/576e35e919.js"
+        crossorigin="anonymous"
+      ></script>
       <Link to="/" className={styles.title}>
         <h1>TVING</h1>
       </Link>

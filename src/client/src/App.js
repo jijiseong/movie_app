@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useNavigate, BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Detail from "./pages/Detail";
 import Loading from "./pages/Loading";
@@ -6,6 +6,7 @@ import Header from "./pages/components/Header";
 import Live from "./pages/Live";
 import Home from "./pages/Home";
 import Tv from "./pages/Tv";
+import Login from "./pages/Login";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -52,6 +53,7 @@ function App() {
             path="/movie"
             element={loading ? <Loading /> : <Live moviesList={moviesList} />}
           ></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
